@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Plans - Little Clouds</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <span class="logo-icon">☁️</span>
+                    <span class="logo-text">Little Clouds</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Shop</a></li>
+                <li><a href="subscription.html" class="active">Subscription Plans</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-link">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Subscription Hero -->
+    <section class="subscription-hero">
+        <div class="container">
+            <h1>Subscription Plans</h1>
+            <p class="subtitle">Choose the perfect plan for your little one's needs</p>
+            <div class="billing-toggle">
+                <button class="billing-btn active" onclick="toggleBilling('monthly')">Monthly</button>
+                <button class="billing-btn" onclick="toggleBilling('quarterly')">Quarterly <span class="save-badge">Save 15%</span></button>
+                <button class="billing-btn" onclick="toggleBilling('annual')">Annual <span class="save-badge">Save 25%</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-grid">
+                <!-- Starter Plan -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <div class="plan-icon">🌟</div>
+                        <h3>Starter</h3>
+                        <p class="plan-desc">Perfect for new parents</p>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">₹</span>
+                        <span class="amount" data-monthly="999" data-quarterly="849" data-annual="749">999</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="original-price">
+                        <span>Regular price: ₹1,299</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ 2-3 clothing items per month</li>
+                        <li>✓ 10% discount on all items</li>
+                        <li>✓ Free shipping</li>
+                        <li>✓ Flexible delivery schedule</li>
+                        <li>✓ Cancel anytime</li>
+                    </ul>
+                    <button class="btn-plan" onclick="selectPlan('starter')">Choose Starter</button>
+                </div>
+
+                <!-- Essential Plan (Popular) -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <div class="plan-icon">💎</div>
+                        <h3>Essential</h3>
+                        <p class="plan-desc">Best value for growing babies</p>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">₹</span>
+                        <span class="amount" data-monthly="1799" data-quarterly="1529" data-annual="1349">1799</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="original-price">
+                        <span>Regular price: ₹2,399</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ 4-5 clothing items per month</li>
+                        <li>✓ 15% discount on all items</li>
+                        <li>✓ Free express shipping</li>
+                        <li>✓ Priority customer support</li>
+                        <li>✓ Early access to new collections</li>
+                        <li>✓ Birthday surprise gift</li>
+                        <li>✓ Cancel anytime</li>
+                    </ul>
+                    <button class="btn-plan" onclick="selectPlan('essential')">Choose Essential</button>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <div class="plan-icon">👑</div>
+                        <h3>Premium</h3>
+                        <p class="plan-desc">Complete care package</p>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">₹</span>
+                        <span class="amount" data-monthly="2999" data-quarterly="2549" data-annual="2249">2999</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="original-price">
+                        <span>Regular price: ₹3,999</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ 6-8 clothing items per month</li>
+                        <li>✓ 25% discount on all items</li>
+                        <li>✓ Free express shipping</li>
+                        <li>✓ Dedicated account manager</li>
+                        <li>✓ Personalized styling advice</li>
+                        <li>✓ Exclusive premium items</li>
+                        <li>✓ Free gift wrapping</li>
+                        <li>✓ Birthday & milestone gifts</li>
+                        <li>✓ Cancel anytime</li>
+                    </ul>
+                    <button class="btn-plan" onclick="selectPlan('premium')">Choose Premium</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How Subscription Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📋</div>
+                    <h3>Choose Your Plan</h3>
+                    <p>Select the subscription that fits your baby's needs and your budget</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🎯</div>
+                    <h3>Personalize</h3>
+                    <p>Tell us your baby's age, size preferences, and style choices</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📦</div>
+                    <h3>Receive Monthly</h3>
+                    <p>Get curated baby essentials delivered to your doorstep every month</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">😊</div>
+                    <h3>Enjoy & Manage</h3>
+                    <p>Pause, skip, or cancel anytime. Total flexibility for busy parents</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Benefits -->
+    <section class="subscription-benefits">
+        <div class="container">
+            <h2>Why Subscribe to Little Clouds?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Save More</h3>
+                    <p>Up to 25% off compared to regular prices</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎁</div>
+                    <h3>Surprise Gifts</h3>
+                    <p>Exclusive items and birthday surprises</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⏰</div>
+                    <h3>Never Run Out</h3>
+                    <p>Automatic monthly delivery of essentials</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Total Flexibility</h3>
+                    <p>Change, pause, or cancel anytime</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Priority Access</h3>
+                    <p>First to know about new launches</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💚</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Sustainable packaging, minimal waste</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Can I cancel my subscription anytime?</h3>
+                    <p>Yes! You have complete flexibility to cancel, pause, or modify your subscription at any time with no penalties.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How does shipping work?</h3>
+                    <p>All subscription orders come with free shipping. Premium members get express delivery within 2-3 business days.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I customize what I receive?</h3>
+                    <p>Absolutely! You can set preferences for colors, styles, and items. You can also skip items you don't need.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if something doesn't fit?</h3>
+                    <p>We offer easy exchanges and returns within 30 days. Subscribers get priority processing on all returns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Success Modal -->
+    <div id="subscription-modal" class="checkout-modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Subscription Activated!</h2>
+            <p id="plan-name">You've selected the Essential Plan</p>
+            <p class="subscription-details">
+                Your first box will arrive within 5-7 business days.<br>
+                Welcome to the Little Clouds family!
+            </p>
+            <div class="modal-buttons">
+                <button onclick="closeSubscriptionModal()" class="btn-primary">Start Shopping</button>
+                <button onclick="closeSubscriptionModal()" class="btn-secondary">Manage Subscription</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Processing your subscription...</p>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <span class="logo-icon">☁️</span>
+                        <span class="logo-text">Little Clouds</span>
+                    </div>
+                    <p class="footer-tagline">Nurturing comfort, one garment at a time</p>
+                   <div class="social-links">
+                        <a href="https://www.linkedin.com/in/vrinda-gupta-558754205/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://www.instagram.com/vrinda1006/" target="_blank" rel="noopener">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Shop</a></li>
+                        <li><a href="subscription.html">Subscriptions</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>📧 vrinda@littleclouds.com</li>
+                        <li>📞 +91 931xx xx109</li>
+                        <li>📍 Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Little Clouds. Made with 💗 for your little ones</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

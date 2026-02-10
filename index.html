@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Clouds - Premium Baby Clothing | Subscribe & Save</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Newsletter Popup -->
+    <div id="newsletter-popup" class="newsletter-popup">
+        <div class="newsletter-content">
+            <button class="close-popup" onclick="closeNewsletter()">&times;</button>
+            <div class="newsletter-icon">✉️</div>
+            <h2>Join Our Cloud Family</h2>
+            <p>Get 15% off your first order + early access to new collections</p>
+            <form onsubmit="return subscribeNewsletter(event)">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn-primary">Subscribe Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <span class="logo-icon">☁️</span>
+                    <span class="logo-text">Little Clouds</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="active">Shop</a></li>
+                <li><a href="subscription.html">Subscription Plans</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-link">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Softness Wrapped in Love</h1>
+            <p class="hero-subtitle">Premium organic cotton clothing for your little ones</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn-hero-primary">Shop Now</a>
+                <a href="subscription.html" class="btn-hero-secondary">View Plans</a>
+            </div>
+            <div class="subscription-banner">
+                <span class="sub-icon">⭐</span>
+                <span>Subscribe & Save up to 25% on every order</span>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-cloud cloud-1">☁️</div>
+            <div class="floating-cloud cloud-2">☁️</div>
+            <div class="floating-cloud cloud-3">☁️</div>
+        </div>
+    </section>
+
+    <!-- Category Tabs -->
+    <section class="category-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Collection</h2>
+                <p>Handpicked essentials for your baby's comfort</p>
+            </div>
+
+            <div class="category-tabs">
+                <button class="tab-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="tab-btn" onclick="filterProducts('clothing')">Clothing</button>
+                <button class="tab-btn" onclick="filterProducts('accessories')">Accessories</button>
+                <button class="tab-btn" onclick="filterProducts('bundles')">Gift Bundles</button>
+                <button class="tab-btn" onclick="filterProducts('newborn')">Newborn</button>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription CTA Section -->
+    <section class="subscription-cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-left">
+                    <h2>Never Run Out of Essentials</h2>
+                    <p>Subscribe to our monthly delivery and enjoy:</p>
+                    <ul class="benefits-list">
+                        <li>✓ Save up to 25% on every order</li>
+                        <li>✓ Free shipping on all subscriptions</li>
+                        <li>✓ Flexible plans - pause or cancel anytime</li>
+                        <li>✓ Early access to new collections</li>
+                        <li>✓ Priority customer support</li>
+                    </ul>
+                    <a href="subscription.html" class="btn-cta">Explore Subscription Plans</a>
+                </div>
+                <div class="cta-right">
+                    <div class="subscription-preview">
+                        <div class="preview-card">
+                            <div class="preview-icon">📦</div>
+                            <h3>Monthly Box</h3>
+                            <p>Curated essentials delivered every month</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>100% Organic</h3>
+                    <p>Certified organic cotton, chemical-free</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Free Delivery</h3>
+                    <p>On orders above ₹1500</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💝</div>
+                    <h3>Quality Promise</h3>
+                    <p>30-day satisfaction guarantee</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Easy Returns</h3>
+                    <p>Hassle-free return policy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Adding to cart...</p>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <span class="logo-icon">☁️</span>
+                        <span class="logo-text">Little Clouds</span>
+                    </div>
+                    <p class="footer-tagline">Nurturing comfort, one garment at a time</p>
+                   <div class="social-links">
+                        <a href="https://www.linkedin.com/in/vrinda-gupta-558754205/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://www.instagram.com/vrinda1006/" target="_blank" rel="noopener">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Shop</a></li>
+                        <li><a href="subscription.html">Subscriptions</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>📧 vrinda@littleclouds.com</li>
+                        <li>📞 +91 931xx xx109</li>
+                        <li>📍 Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Little Clouds. Made with 💗 for your little ones</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

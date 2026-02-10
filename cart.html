@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Little Clouds</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <span class="logo-icon">☁️</span>
+                    <span class="logo-text">Little Clouds</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Shop</a></li>
+                <li><a href="subscription.html">Subscription Plans</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-link active">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <h1 class="cart-title">Your Shopping Cart</h1>
+            
+            <div class="cart-wrapper">
+                <!-- Cart Items -->
+                <div class="cart-items" id="cart-items">
+                    <!-- Items will be loaded here by JavaScript -->
+                </div>
+
+                <!-- Empty Cart Message -->
+                <div class="empty-cart" id="empty-cart" style="display: none;">
+                    <div class="empty-cart-icon">🛒</div>
+                    <h2>Your cart is empty</h2>
+                    <p>Add some adorable items for your little one!</p>
+                    <a href="index.html" class="btn-primary">Continue Shopping</a>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary" id="cart-summary">
+                    <h3>Order Summary</h3>
+                    
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0</span>
+                    </div>
+                    
+                    <div class="coupon-section">
+                        <input type="text" id="coupon-input" placeholder="Enter coupon code">
+                        <button onclick="applyCoupon()" class="btn-secondary">Apply</button>
+                    </div>
+                    
+                    <div class="discount-row" id="discount-row" style="display: none;">
+                        <span>Discount:</span>
+                        <span class="discount-amount" id="discount-amount">-₹0</span>
+                    </div>
+                    
+                    <div class="subscription-offer">
+                        <label class="subscription-checkbox">
+                            <input type="checkbox" id="subscribe-checkbox" onchange="toggleSubscription()">
+                            <span>Subscribe & Save 10%</span>
+                        </label>
+                        <p class="subscription-note">Get automatic deliveries every month</p>
+                    </div>
+                    
+                    <div class="summary-row total-row">
+                        <span>Total:</span>
+                        <span id="total" class="total-amount">₹0</span>
+                    </div>
+                    
+                    <button onclick="proceedToCheckout()" class="btn-checkout">
+                        Proceed to Checkout
+                    </button>
+                    
+                    <a href="index.html" class="continue-shopping">← Continue Shopping</a>
+                    
+                    <div class="cart-benefits">
+                        <p class="benefit-item">✓ Free shipping on orders above ₹1500</p>
+                        <p class="benefit-item">✓ 30-day easy returns</p>
+                        <p class="benefit-item">✓ Secure payment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Success Modal -->
+    <div id="checkout-modal" class="checkout-modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Order Placed Successfully!</h2>
+            <p>Thank you for your purchase. Your order has been confirmed.</p>
+            <p class="order-number">Order #LC<span id="order-number"></span></p>
+            <p class="delivery-note">Your items will be delivered within 5-7 business days.</p>
+            <div class="modal-buttons">
+                <button onclick="closeCheckoutModal()" class="btn-primary">Continue Shopping</button>
+                <a href="subscription.html" class="btn-secondary">View Subscription Plans</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Processing your order...</p>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <span class="logo-icon">☁️</span>
+                        <span class="logo-text">Little Clouds</span>
+                    </div>
+                    <p class="footer-tagline">Nurturing comfort, one garment at a time</p>
+                      <div class="social-links">
+                        <a href="https://www.linkedin.com/in/vrinda-gupta-558754205/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://www.instagram.com/vrinda1006/" target="_blank" rel="noopener">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Shop</a></li>
+                        <li><a href="subscription.html">Subscriptions</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>📧 vrinda@littleclouds.com</li>
+                        <li>📞 +91 931xx xx109</li>
+                        <li>📍 Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Little Clouds. Made with 💗 for your little ones</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

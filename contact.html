@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Little Clouds</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <span class="logo-icon">☁️</span>
+                    <span class="logo-text">Little Clouds</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Shop</a></li>
+                <li><a href="subscription.html">Subscription Plans</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="cart.html" class="cart-link">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-hero">
+                <h1>Get in Touch</h1>
+                <p class="contact-subtitle">We'd love to hear from you! Send us a message and we'll respond within 24 hours.</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <h3>Email Us</h3>
+                        <p>hello@littleclouds.com</p>
+                        <p class="info-note">Response within 24 hours</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h3>Call Us</h3>
+                        <p>+91 98765 43210</p>
+                        <p class="info-note">Mon-Sat, 9 AM - 6 PM IST</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>Visit Us</h3>
+                        <p>Little Clouds HQ</p>
+                        <p>123 Baby Street, Bandra</p>
+                        <p>Mumbai, Maharashtra 400050</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">💬</div>
+                        <h3>Follow Us</h3>
+                        <div class="social-links-large">
+                            <a href="#" class="social-btn">📘 Facebook</a>
+                            <a href="#" class="social-btn">📷 Instagram</a>
+                            <a href="#" class="social-btn">🐦 Twitter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" onsubmit="return submitContactForm(event)">
+                        <h2>Send Us a Message</h2>
+                        
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="order">Order Inquiry</option>
+                                <option value="subscription">Subscription Question</option>
+                                <option value="product">Product Information</option>
+                                <option value="returns">Returns & Exchanges</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Quick Links -->
+    <section class="quick-help">
+        <div class="container">
+            <h2>Quick Help</h2>
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-icon">📦</div>
+                    <h3>Track Order</h3>
+                    <p>Check your order status</p>
+                    <a href="#" class="help-link">Track Now →</a>
+                </div>
+                <div class="help-card">
+                    <div class="help-icon">🔄</div>
+                    <h3>Returns</h3>
+                    <p>Easy 30-day returns</p>
+                    <a href="#" class="help-link">Learn More →</a>
+                </div>
+                <div class="help-card">
+                    <div class="help-icon">📏</div>
+                    <h3>Size Guide</h3>
+                    <p>Find the perfect fit</p>
+                    <a href="#" class="help-link">View Guide →</a>
+                </div>
+                <div class="help-card">
+                    <div class="help-icon">❓</div>
+                    <h3>FAQs</h3>
+                    <p>Quick answers</p>
+                    <a href="#" class="help-link">Read FAQs →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Success Modal -->
+    <div id="contact-modal" class="checkout-modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Message Sent!</h2>
+            <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+            <button onclick="closeContactModal()" class="btn-primary">Close</button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Sending your message...</p>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <span class="logo-icon">☁️</span>
+                        <span class="logo-text">Little Clouds</span>
+                    </div>
+                    <p class="footer-tagline">Nurturing comfort, one garment at a time</p>
+                   <div class="social-links">
+                        <a href="https://www.linkedin.com/in/vrinda-gupta-558754205/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://www.instagram.com/vrinda1006/" target="_blank" rel="noopener">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Shop</a></li>
+                        <li><a href="subscription.html">Subscriptions</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>📧 vrinda@littleclouds.com</li>
+                        <li>📞 +91 931xx xx109</li>
+                        <li>📍 Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Little Clouds. Made with 💗 for your little ones</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
